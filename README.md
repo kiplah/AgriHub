@@ -143,3 +143,5 @@ The frontend will start on `http://localhost:3000`
 3. Make your changes
 4. Test thoroughly
 5. Submit a pull request
+
+**AgroMart** - Revolutionizing Agriculture Through Technology 🌱
