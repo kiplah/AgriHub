@@ -1,34 +1,77 @@
-import React from 'react';
-import { User, Mail, Phone, MapPin } from 'lucide-react';
-export function Profile() {
-  return <div className="space-y-6">
-      <h1 className="text-2xl font-bold text-gray-900">Profile</h1>
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { User, Mail, Phone, MapPin } from "lucide-react";
 
-      <div className="bg-white rounded-lg shadow p-6">
-        <div className="flex items-center gap-6 mb-6">
-          <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center">
-            <User className="w-12 h-12 text-green-600" />
-          </div>
-          <div>
-            <h2 className="text-xl font-semibold">John Farmer</h2>
-            <p className="text-gray-600">Farmer ID: AGR-2024-001</p>
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <Mail className="w-5 h-5 text-gray-400" />
-            <span>john.farmer@example.com</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <Phone className="w-5 h-5 text-gray-400" />
-            <span>+91 98765 43210</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <MapPin className="w-5 h-5 text-gray-400" />
-            <span>Village Greenfield, District Agri, State 123456</span>
-          </div>
-        </div>
+const Profile = () => {
+  return (
+    <div className="space-y-6 max-w-2xl">
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight">Profile</h1>
+        <p className="text-muted-foreground">Manage your account information</p>
       </div>
-    </div>;
-}
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Personal Information</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="flex items-center gap-6">
+            <Avatar className="h-24 w-24">
+              <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=farmer" />
+              <AvatarFallback>JD</AvatarFallback>
+            </Avatar>
+            <div>
+              <Button variant="outline">Change Photo</Button>
+              <p className="text-sm text-muted-foreground mt-2">JPG, PNG or GIF, max 2MB</p>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="firstName">First Name</Label>
+              <div className="relative">
+                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input id="firstName" placeholder="John" className="pl-10" defaultValue="John" />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="lastName">Last Name</Label>
+              <Input id="lastName" placeholder="Doe" defaultValue="Doe" />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="email">Email</Label>
+            <div className="relative">
+              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input id="email" type="email" className="pl-10" defaultValue="john.doe@agrihub.com" />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="phone">Phone Number</Label>
+            <div className="relative">
+              <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input id="phone" type="tel" className="pl-10" defaultValue="+254 700 000000" />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="location">Location</Label>
+            <div className="relative">
+              <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input id="location" className="pl-10" defaultValue="Nairobi, Kenya" />
+            </div>
+          </div>
+
+          <Button className="w-full">Save Changes</Button>
+        </CardContent>
+      </Card>
+    </div>
+  );
+};
+
+export default Profile;
