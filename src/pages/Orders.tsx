@@ -1,71 +1,91 @@
-import React from 'react';
-import { Package } from 'lucide-react';
-export function Orders() {
-  const orders = [{
-    id: 'ORD-001',
-    product: 'Organic Fertilizer',
-    quantity: '50kg',
-    status: 'Delivered',
-    date: '2024-01-15'
-  }, {
-    id: 'ORD-002',
-    product: 'Seeds - Wheat',
-    quantity: '25kg',
-    status: 'In Transit',
-    date: '2024-01-18'
-  }, {
-    id: 'ORD-003',
-    product: 'Pesticide',
-    quantity: '10L',
-    status: 'Processing',
-    date: '2024-01-20'
-  }];
-  return <div className="space-y-6">
-      <h1 className="text-2xl font-bold text-gray-900">Orders</h1>
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Package, Eye } from "lucide-react";
 
-      <div className="bg-white rounded-lg shadow overflow-hidden">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                Order ID
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                Product
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                Quantity
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                Status
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                Date
-              </th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            {orders.map(order => <tr key={order.id}>
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                  {order.id}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {order.product}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {order.quantity}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <span className={`px-2 py-1 text-xs font-medium rounded-full ${order.status === 'Delivered' ? 'bg-green-100 text-green-800' : order.status === 'In Transit' ? 'bg-blue-100 text-blue-800' : 'bg-yellow-100 text-yellow-800'}`}>
-                    {order.status}
-                  </span>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {order.date}
-                </td>
-              </tr>)}
-          </tbody>
-        </table>
+const Orders = () => {
+  const orders = [
+    {
+      id: "ORD-001",
+      date: "2024-01-15",
+      items: 3,
+      total: 1250,
+      status: "delivered",
+    },
+    {
+      id: "ORD-002",
+      date: "2024-01-18",
+      items: 2,
+      total: 850,
+      status: "in-transit",
+    },
+    {
+      id: "ORD-003",
+      date: "2024-01-20",
+      items: 5,
+      total: 2100,
+      status: "processing",
+    },
+  ];
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case "delivered":
+        return "bg-success text-success-foreground";
+      case "in-transit":
+        return "bg-warning text-warning-foreground";
+      case "processing":
+        return "bg-primary text-primary-foreground";
+      default:
+        return "bg-secondary text-secondary-foreground";
+    }
+  };
+
+  return (
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight">My Orders</h1>
+        <p className="text-muted-foreground">Track and manage your orders</p>
       </div>
-    </div>;
-}
+
+      <div className="space-y-4">
+        {orders.map((order) => (
+          <Card key={order.id}>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-lg">Order {order.id}</CardTitle>
+                <Badge className={getStatusColor(order.status)}>
+                  {order.status.replace("-", " ").toUpperCase()}
+                </Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-4 gap-4 mb-4">
+                <div>
+                  <p className="text-sm text-muted-foreground mb-1">Date</p>
+                  <p className="font-medium">{new Date(order.date).toLocaleDateString()}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground mb-1">Items</p>
+                  <p className="font-medium">{order.items} items</p>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground mb-1">Total</p>
+                  <p className="font-medium text-primary">KSh {order.total.toLocaleString()}</p>
+                </div>
+                <div className="flex items-end">
+                  <Button variant="outline" className="w-full">
+                    <Eye className="h-4 w-4 mr-2" />
+                    View Details
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Orders;
