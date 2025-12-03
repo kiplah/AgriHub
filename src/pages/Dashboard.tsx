@@ -11,7 +11,7 @@ const salesData = [
   { month: "Jun", sales: 5500, orders: 34 },
 ];
 
-const Dashboard = () => {
+export function Dashboard() {
   const stats = [
     {
       title: "Total Revenue",
@@ -138,4 +138,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+
