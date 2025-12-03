@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
@@ -24,6 +24,6 @@ export function Button({
     lg: 'px-6 py-3 text-base'
   };
   return <button className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`} {...props}>
-      {children}
-    </button>;
+    {children}
+  </button>;
 }
