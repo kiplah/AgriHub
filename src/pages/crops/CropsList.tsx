@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Plus, Eye } from "lucide-react";
 
-const CropsList = () => {
+export function CropsList() {
   const crops = [
     {
       id: "C001",
@@ -66,10 +66,10 @@ const CropsList = () => {
                   <h3 className="font-semibold text-lg">{crop.name}</h3>
                   <p className="text-sm text-muted-foreground">ID: {crop.id}</p>
                 </div>
-                <Badge 
+                <Badge
                   variant={
-                    crop.health === "Excellent" || crop.health === "Good" 
-                      ? "default" 
+                    crop.health === "Excellent" || crop.health === "Good"
+                      ? "default"
                       : "secondary"
                   }
                 >
@@ -104,4 +104,4 @@ const CropsList = () => {
   );
 };
 
-export default CropsList;
+

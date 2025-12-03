@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { User, Mail, Phone, MapPin } from "lucide-react";
 
-const Profile = () => {
+export function Profile() {
   return (
     <div className="space-y-6 max-w-2xl">
       <div>
@@ -74,4 +74,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+

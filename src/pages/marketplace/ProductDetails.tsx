@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ShoppingCart, Heart, Star, Truck, Shield, Award } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
-const ProductDetails = () => {
+export function ProductDetails() {
   const { productId } = useParams();
 
   // Placeholder data
@@ -56,11 +56,10 @@ const ProductDetails = () => {
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className={`h-5 w-5 ${
-                    i < Math.floor(product.rating)
-                      ? "fill-warning text-warning"
-                      : "text-muted"
-                  }`}
+                  className={`h-5 w-5 ${i < Math.floor(product.rating)
+                    ? "fill-warning text-warning"
+                    : "text-muted"
+                    }`}
                 />
               ))}
             </div>
@@ -146,4 +145,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails;
+

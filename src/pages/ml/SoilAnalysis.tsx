@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Lightbulb, Leaf } from "lucide-react";
 
-const SoilAnalysis = () => {
+export function SoilAnalysis() {
   const [result, setResult] = useState<any>(null);
 
   const handleAnalyze = (e: React.FormEvent) => {
@@ -142,4 +142,4 @@ const SoilAnalysis = () => {
   );
 };
 
-export default SoilAnalysis;
+

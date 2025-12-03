@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Plus, Eye } from "lucide-react";
 
-const LivestockList = () => {
+export function LivestockList() {
   const livestock = [
     {
       id: "L001",
@@ -98,4 +98,4 @@ const LivestockList = () => {
   );
 };
 
-export default LivestockList;
+

@@ -4,7 +4,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Separator } from "@/components/ui/separator";
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 
-const Cart = () => {
+export function Cart() {
   // Placeholder cart data
   const cartItems = [
     {
@@ -114,4 +114,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+

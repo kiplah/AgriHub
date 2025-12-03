@@ -8,7 +8,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
-const LivestockGrowth = () => {
+export function LivestockGrowth() {
   const [prediction, setPrediction] = useState<any>(null);
 
   const handlePredict = (e: React.FormEvent) => {
@@ -132,10 +132,10 @@ const LivestockGrowth = () => {
                       <YAxis label={{ value: 'Weight (kg)', angle: -90, position: 'insideLeft' }} />
                       <Tooltip />
                       <Legend />
-                      <Line 
-                        type="monotone" 
-                        dataKey="weight" 
-                        stroke="hsl(var(--primary))" 
+                      <Line
+                        type="monotone"
+                        dataKey="weight"
+                        stroke="hsl(var(--primary))"
                         strokeWidth={2}
                         name="Predicted Weight"
                       />
@@ -151,4 +151,4 @@ const LivestockGrowth = () => {
   );
 };
 
-export default LivestockGrowth;
+

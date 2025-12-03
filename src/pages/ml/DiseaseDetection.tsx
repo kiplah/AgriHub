@@ -6,7 +6,7 @@ import { Upload, AlertCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
-const DiseaseDetection = () => {
+export function DiseaseDetection() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [analyzing, setAnalyzing] = useState(false);
   const [result, setResult] = useState<any>(null);
@@ -141,4 +141,4 @@ const DiseaseDetection = () => {
   );
 };
 
-export default DiseaseDetection;
+

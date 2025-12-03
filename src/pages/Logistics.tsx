@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Truck, Package, MapPin, Clock } from "lucide-react";
 
-const Logistics = () => {
+export function Logistics() {
   const deliveries = [
     {
       id: "DEL-001",
@@ -134,4 +134,4 @@ const Logistics = () => {
   );
 };
 
-export default Logistics;
+

@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { ArrowLeft } from "lucide-react";
 
-const AddLivestock = () => {
+export function AddLivestock() {
   const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -121,4 +121,4 @@ const AddLivestock = () => {
   );
 };
 
-export default AddLivestock;
+

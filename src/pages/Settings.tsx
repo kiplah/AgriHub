@@ -5,7 +5,7 @@ import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
 import { Bell, Shield, Globe, Moon } from "lucide-react";
 
-const Settings = () => {
+export function Settings() {
   return (
     <div className="space-y-6 max-w-2xl">
       <div>
@@ -108,4 +108,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+

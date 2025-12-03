@@ -6,7 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Search, SlidersHorizontal } from "lucide-react";
 import { mockProducts } from "@/utils/mockData";
 
-const Marketplace = () => {
+export function Marketplace() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
 
@@ -57,4 +57,4 @@ const Marketplace = () => {
   );
 };
 
-export default Marketplace;
+

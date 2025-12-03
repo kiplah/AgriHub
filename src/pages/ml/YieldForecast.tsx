@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
 import { TrendingUp } from "lucide-react";
 
-const YieldForecast = () => {
+export function YieldForecast() {
   const [forecast, setForecast] = useState<any>(null);
 
   const handleForecast = (e: React.FormEvent) => {
@@ -171,8 +171,8 @@ const YieldForecast = () => {
                               factor.impact === "Positive"
                                 ? "default"
                                 : factor.impact === "Negative"
-                                ? "destructive"
-                                : "secondary"
+                                  ? "destructive"
+                                  : "secondary"
                             }
                           >
                             {factor.value}
@@ -191,4 +191,4 @@ const YieldForecast = () => {
   );
 };
 
-export default YieldForecast;
+

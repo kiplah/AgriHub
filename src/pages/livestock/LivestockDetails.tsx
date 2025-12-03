@@ -15,7 +15,7 @@ const weightData = [
   { month: "Jun", weight: 550 },
 ];
 
-const LivestockDetails = () => {
+export function LivestockDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -159,4 +159,4 @@ const LivestockDetails = () => {
   );
 };
 
-export default LivestockDetails;
+

@@ -8,7 +8,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Separator } from "@/components/ui/separator";
 import { CreditCard, Smartphone } from "lucide-react";
 
-const Checkout = () => {
+export function Checkout() {
   const navigate = useNavigate();
   const [paymentMethod, setPaymentMethod] = useState("mpesa");
 
@@ -150,4 +150,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+

@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Package, Eye } from "lucide-react";
 
-const Orders = () => {
+export function Orders() {
   const orders = [
     {
       id: "ORD-001",
@@ -88,4 +88,4 @@ const Orders = () => {
   );
 };
 
-export default Orders;
+

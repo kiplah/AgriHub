@@ -21,7 +21,7 @@ const soilData = [
   { metric: "K", value: 28 },
 ];
 
-const CropDetails = () => {
+export function CropDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -168,4 +168,4 @@ const CropDetails = () => {
   );
 };
 
-export default CropDetails;
+
